@@ -37,6 +37,7 @@ Possibilitamos testes de persistência e consulta na classe `MainTest`, basta ex
     - [Cadastrar](#cadastrar-usuário)
     - [Login](#login-usuário)
     - [Listar todos](#listar-usuários)
+    - [Usuário por email](#usuário-email)
     - [Apagar](#apagar-usuário)
     - [Atualizar](#atualizar-usuário)
     - [Detalhes](#detalhes-usuário)
@@ -676,6 +677,47 @@ Exemplo de requisição:
 |:------:|------------------------------|
 |200     | Listagem feita com sucesso.  |
 |404     | Lista não encontrada.        |
+
+<hr>
+
+### Usuário Email
+
+`GET` /solidarityconnect/api/usuarios/email?email={emailDoUsuario}
+
+*Campos da requisição*
+
+| Campo           | Tipo    | Obrigatório | Descrição             |
+|-----------------|---------|:-----------:|-----------------------|
+| emailUsuario    | texto   | Não         | O email do usuário    |
+
+*Campos da resposta*
+
+| Campo           | Tipo    | Descrição             |
+|-----------------|---------|-----------------------|
+| idUsuario       | Long    | O ID do usuário       |
+| nomeUsuario     | texto   | O nome do usuário     |
+| emailUsuario    | texto   | O email do usuário    |
+| senhaUsuario    | texto   | A senha do usuário    |
+| cnpjUsuario     | texto   | O CNPJ do usuário     |
+| telefoneUsuario | texto   | O telefone do usuário |
+
+```
+{
+    "idUsuario": 1,
+    "nomeUsuario": "Restaurante Sabores Exóticos",
+    "emailUsuario": "contato@saboresexoticos.com",
+    "senhaUsuario": "restaurante123",
+    "cnpjUsuario": "12.345.678/0001-90",
+    "telefoneUsuario": "(12) 3456-7890"
+}
+```
+
+*Corpo da resposta:*
+
+| Código | Descrição                                 |
+|:------:|-------------------------------------------|
+| 200    | Os dados foram retornados com sucesso.    |
+| 404    | Não foi encontrado um usuário com esse ID.|
 
 <hr>
 

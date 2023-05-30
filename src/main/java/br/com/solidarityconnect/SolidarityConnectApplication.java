@@ -24,7 +24,6 @@ public class SolidarityConnectApplication {
 		AlimentoRepository alimentoRepository = context.getBean(AlimentoRepository.class);
 		EnderecoRepository enderecoRepository = context.getBean(EnderecoRepository.class);
 		UsuarioRepository usuarioRepository = context.getBean(UsuarioRepository.class);
-		DoacaoRepository doacaoRepository = context.getBean(DoacaoRepository.class);
 
 		// Realizar testes
 
@@ -277,10 +276,10 @@ public class SolidarityConnectApplication {
 	}
 
 	public static void testFindByEmail(UsuarioRepository usuarioRepository, String email) {
-		List<Usuario> usuarios = usuarioRepository.findByEmail(email);
+		Usuario usuario = usuarioRepository.findByEmail(email);
 		System.out.println("\n###############################################");
 		System.out.println("\nUsuários por email:\n");
-		usuarios.forEach(System.out::println);
+		System.out.println(usuario);
 	}
 
 	public static void testFindByNomeUsuarioContaining(UsuarioRepository usuarioRepository, String nomeUsuario) {

@@ -1,5 +1,7 @@
 package br.com.solidarityconnect.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -67,6 +69,12 @@ public class UsuarioController {
 		log.info("Buscar Usuário " + id);
 		var usuario = findByUsuario(id);
 		return usuario.toEntityModel();
+	}
+
+	@GetMapping("/email")
+	public Usuario findByEmail(@RequestParam String email) {
+    log.info("Buscar Usuários por e-mail: " + email);
+    return usuarioRepository.findByEmail(email);
 	}
 
 	@PostMapping("/cadastro")
