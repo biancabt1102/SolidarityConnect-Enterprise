@@ -22,5 +22,4 @@ public interface AlimentoRepository extends JpaRepository<Alimento, Long> {
     List<Alimento> findByQuantidadeAlimentoGreaterThan(int quantidade);
 
 
-
 }

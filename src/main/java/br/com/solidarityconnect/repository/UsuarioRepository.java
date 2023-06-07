@@ -25,4 +25,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
     @Query("SELECT u FROM Usuario u WHERE u.cnpjUsuario = :cnpj")
     List<Usuario> findByCnpj(String cnpj);
+
+    @Query("SELECT u FROM Usuario u ORDER BY u.id DESC")
+    Optional<Usuario> findFirstByOrderByIdDesc();
+
+    Usuario findTopByOrderByIdUsuarioDesc();
+
 }

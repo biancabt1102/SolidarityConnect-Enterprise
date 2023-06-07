@@ -1,19 +1,19 @@
 package br.com.solidarityconnect;
 
-import br.com.solidarityconnect.models.Alimento;
-import br.com.solidarityconnect.models.Endereco;
-import br.com.solidarityconnect.models.Usuario;
-import br.com.solidarityconnect.repository.AlimentoRepository;
-import br.com.solidarityconnect.repository.DoacaoRepository;
-import br.com.solidarityconnect.repository.EnderecoRepository;
-import br.com.solidarityconnect.repository.UsuarioRepository;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import br.com.solidarityconnect.models.Alimento;
+import br.com.solidarityconnect.models.Endereco;
+import br.com.solidarityconnect.models.Usuario;
+import br.com.solidarityconnect.repository.AlimentoRepository;
+import br.com.solidarityconnect.repository.EnderecoRepository;
+import br.com.solidarityconnect.repository.UsuarioRepository;
 
 @SpringBootApplication
 public class SolidarityConnectApplication {

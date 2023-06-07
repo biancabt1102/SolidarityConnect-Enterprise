@@ -129,9 +129,17 @@ public class AlimentoController {
 	public ResponseEntity<Object> delete(@PathVariable Long id) {
 		log.info("Deletando Alimento");
 
-		alimentoRepository.delete(findByAlimento(id));
+		Alimento alimento = findByAlimento(id);
+		List<Doacao> doacoes = doacaoRepository.findByAlimento(alimento);
+
+		if (!doacoes.isEmpty()) {
+			doacaoRepository.deleteAll(doacoes);
+		}
+
+		alimentoRepository.delete(alimento);
 		return ResponseEntity.noContent().build();
 	}
+
 
 	@PutMapping("{id}")
 	public EntityModel<Alimento> update(@PathVariable @Valid Long id, @RequestBody Alimento alimento) {
